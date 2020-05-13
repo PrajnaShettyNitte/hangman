@@ -32,7 +32,7 @@ def get_status(status, secret, current_guess):
     for k, v in zip(secret.keys(), secret.values()):
         if current_guess == v:
             status[k] = v
-
+            print("\nCorrect guess!\n")
     print(''.join(status))
     return status
 
@@ -69,3 +69,12 @@ def game():
 
 if __name__ == "__main__":
     game()
+    while True:
+        again = input("\nDo you want to play again? Yes(Y) or No(N)\n")
+        while again.lower() not in ["y", "yes", "n", "no"]:
+            input("\nPlease input Yes(Y) or No(N): \n")
+        if again.lower() == "yes" or again.lower() == "y":
+            game()
+        else:
+            print("\nThanks for playing!")
+            break
