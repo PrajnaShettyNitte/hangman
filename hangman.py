@@ -18,11 +18,10 @@ def take_guess(available_letters, secret, lives):
         guess = input("\nYou've guessed that letter already! \n\nGuess again: ")
     if guess not in secret.values():
         lives = lives - 1
-        if lives > 1:
+        if lives > 0:
             print("\nIncorrect guess! You only have " + str(lives) + " lives left!")
             return guess, lives
         else:
-            print("\nIncorrect guess! You only have " + str(lives) + " life left!")
             return guess, lives
     else:
         return guess, lives
